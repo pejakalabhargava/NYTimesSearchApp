@@ -240,18 +240,19 @@ public class SearchActivity extends AppCompatActivity {
         //news_desk:science OR news_desk:arts OR news_desk:fashion
         List<String> filters = new ArrayList<>();
         if (request.getNewsDesk() != null && request.getNewsDesk().size() == 3) {
-            if (request.getNewsDesk().get(0)) filters.add("news_desk:arts");
-            if (request.getNewsDesk().get(1)) filters.add("news_desk:fashion");
-            if (request.getNewsDesk().get(2)) filters.add("news_desk:sports");
+            if (request.getNewsDesk().get(0)) filters.add("arts");
+            if (request.getNewsDesk().get(1)) filters.add("fashion");
+            if (request.getNewsDesk().get(2)) filters.add("sports");
 
         }
         if (filters.size() < 1) return params;
         StringBuilder sb = new StringBuilder();
+        sb.append("news_desk:(");
         for (String filter : filters) {
             sb.append(filter);
-            sb.append(" OR ");
+            sb.append(" ");
         }
-        sb.append(filters.get(0));
+        sb.append(")");
         params.put("fq",sb.toString());
         return params;
 

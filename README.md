@@ -1,4 +1,4 @@
-# Project 2 - *NY Time Search Android App*
+# Project 2 - *NY Times Search*
 
 **NY Time Search** is an android app that allows a user to search for articles on web using simple filters. The app utilizes [New York Times Search API](http://developer.nytimes.com/docs/read/article_search_api_v2).
 
@@ -56,6 +56,7 @@ Describe any challenges encountered while building the app.
 
 - [Android Async HTTP](https://github.com/loopj/android-async-http) - Simple asynchronous HTTP requests with JSON parsing
 - [Picasso](http://square.github.io/picasso/) - Image loading and caching library for Android
+- [Glide]
 
 ## License
 
