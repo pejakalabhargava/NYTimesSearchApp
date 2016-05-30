@@ -45,9 +45,9 @@ public class ArticleArrayAdapter extends ArrayAdapter<Article> {
         tvTitme.setText(article.getHeadLine());
         if (!TextUtils.isEmpty(article.getThumbNail())) {
             //Picasso.with(getContext()).load(article.getThumbNail()).placeholder(R.drawable.user_placeholder)
-              //      .error(R.drawable.user_placeholder_error).transform(new RoundedCornersTransformation(10, 10)).into(imageView);
+            //      .error(R.drawable.user_placeholder_error).transform(new RoundedCornersTransformation(10, 10)).into(imageView);
             Glide.with(getContext())
-                    .load(article.getThumbNail())
+                    .load(article.getThumbNail()).error(R.drawable.user_placeholder_error).placeholder(R.drawable.user_placeholder)
                     .into(imageView);
         } else {
             Picasso.with(getContext()).load(R.drawable.user_placeholder_error).placeholder(R.drawable.user_placeholder)
@@ -58,7 +58,7 @@ public class ArticleArrayAdapter extends ArrayAdapter<Article> {
             @Override
             public void onClick(View v) {
                 Intent articleIntent = new Intent(getContext(), ArticleActivity.class);
-                articleIntent.putExtra("article",article);
+                articleIntent.putExtra("article", article);
                 getContext().startActivity(articleIntent);
             }
         });
