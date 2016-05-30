@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.RequestActivity"
+    tools:showIn="@layout/activity_request">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Begin Date"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/tvDatelabel"
+        android:layout_alignTop="@+id/fetDate"
+        android:layout_alignBottom="@+id/fetDate"
+        android:textSize="20sp"
+        android:layout_toLeftOf="@+id/fetDate"
+        android:layout_toStartOf="@+id/fetDate" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fetDate"
+        android:onClick="getDate"
+        android:textSize="20sp"
+        android:hint="Pick a Date"
+        android:inputType="date"
+        android:textIsSelectable="true"
+        android:cursorVisible="false"
+        android:background="@android:color/transparent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="64dp"
+        android:layout_marginEnd="64dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvSortOrder"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Sort Order" android:layout_marginTop="50dp"
+        android:onClick="getDate"
+        android:textSize="20sp" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fsvDropdown"
+        android:spinnerMode="dropdown"
+        android:entries="@array/sort_order"
+        android:textSize="20sp"
+        android:nestedScrollingEnabled="true"
+        android:layout_alignTop="@+id/tvSortOrder"
+        android:layout_toRightOf="@+id/tvDatelabel"
+        android:layout_toEndOf="@+id/tvDatelabel" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etNewsDeskLabel"
+        android:hint="News Desk Values"
+        android:background="@android:color/transparent"
+        android:textSize="20sp"
+        android:layout_below="@+id/fsvDropdown"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Arts"
+        android:id="@+id/fcbArts"
+        android:layout_alignTop="@+id/etNewsDeskLabel"
+        android:layout_alignLeft="@+id/fcbFashion"
+        android:layout_alignStart="@+id/fcbFashion"
+        android:checked="false" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fashion &amp; Style"
+        android:id="@+id/fcbFashion"
+        android:layout_below="@+id/fcbArts"
+        android:layout_toRightOf="@+id/tvDatelabel"
+        android:layout_toEndOf="@+id/tvDatelabel"
+        android:checked="false" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sports"
+        android:id="@+id/fcbSports"
+        android:layout_below="@+id/fcbFashion"
+        android:layout_toRightOf="@+id/tvDatelabel"
+        android:layout_toEndOf="@+id/tvDatelabel"
+        android:checked="false" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        android:id="@+id/btSave"
+        android:layout_below="@+id/fcbSports"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="89dp"
+        android:onClick="save" />
+
+
+</RelativeLayout>
